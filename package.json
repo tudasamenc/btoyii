@@ -49,6 +49,7 @@
   "devDependencies": {
     "@mightymeld/runtime": "^0.1.51",
     "customize-cra": "^1.0.0",
+    "mightymeld": "^0.2.12",
     "react-app-rewired": "^2.2.1"
   }
 }
