@@ -6,6 +6,8 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import HomeIcon from "../../assets/icons/icon-nav-home.svg";
 import TopArtistsIcon from "../../assets/icons/icon-nav-tv-series.svg";
+import { Home } from "@mui/icons-material";
+import Spline from "@splinetool/react-spline";
 const navLinks = [
     {
         name: "Home",
@@ -22,15 +24,22 @@ const navLinks = [
         icon: TopArtistsIcon,
         link: "/user",
     },
+    {
+        name: "Test",
+        icon: HomeIcon,
+        link: "/test",
+    },
 ];
 
 const Sidebar = () => {
     const { pathname } = useLocation();
     return <Box
+
         sx={{
-            backgroundColor: '#161d2f',
+            backgroundColor: 'rgba(33, 34, 37, 0.95)',
             padding: 2,
-            borderRadius: 2,
+            borderRadius: 7,
+            gap: 200,
             display: 'flex',
             flexDirection:{
                 xs: 'row',
@@ -42,6 +51,11 @@ const Sidebar = () => {
                 sm: '100%',
                 lg: 200,
             },
+            height: 400,
+            marginTop:{
+                xs: 0,
+                lg: 10,
+            }
         }}>
             <Box sx={{ display: 'flex',
                  flexDirection: {
@@ -57,17 +71,19 @@ const Sidebar = () => {
                  
                 }}
                 >
-                    <Paper sx={{ display: { xs: 'none', sm: 'block' } }}>
+                    <Paper sx={{ display: { xs: 'none', sm: 'block' },backgroundColor: 'transparent',color: "white"  }}>
                          <Typography
                             variant="h5"
                             component="h1"
                             my={2}
-                            fontWeight={400}
-                            fontSize={18}
+                            fontFamily={"sans-serif"}
+                            fontWeight={600}
+                            fontSize={30}
                         >
                             Spotify Toy
                         </Typography>
                     </Paper>
+                        
                         <Box sx={{
                             py:{
                                 xs: "0px",
@@ -89,28 +105,42 @@ const Sidebar = () => {
                                         textDecoration: 'none'
                                     }}
                                 >
-                                    <Box sx={{
+                                    <Paper elevation={4} sx={{
                                         display: 'flex',
                                         alignItems: 'center',
+                                        backgroundColor: 'rgba(11, 59, 46, 0.95)',
                                         gap: 2,
                                         color:"white",
-                                        textDecoration: 'none'
+                                        width:{
+                                            xs: '100%',
+                                            lg: 175,
+                                        },
+                                        height: {
+                                            xs: '100%',
+                                            lg: 50,
+                                        },
+                                        borderRadius: 7,
+                                        textDecoration: 'none',
+                                        marginLeft:{
+                                            xs: 0,
+                                            lg: 0,
+                                        }
                                     }}>
                                         <img src={item.icon}
                                             alt={item.name}
                                             style={{
-                                                width: "18px",
+                                                width: "30px",
                                                 filter: `${pathname === item.link
                                                      ? "invert(58%) sepia(14%) saturate(3166%) hue-rotate(215deg) brightness(91%) contrast(87%)"
                                                      : "invert(84%)"
                                                     }`,
                                                 }}
                                         />
-                                                  
-                                        <Paper sx={{ display: { md: 'block', sm: 'none' } }}>
-                                            <Typography>{item.name}</Typography>
+
+                                        <Paper elevation={0} sx={{ display: { md: 'block', sm: 'none' ,backgroundColor: 'transparent',color: "white"} }}>
+                                            <Typography sx={{display:{fontSize:21}}}>{item.name}</Typography>
                                         </Paper>
-                                    </Box>
+                                    </Paper>
                                 </Link>
                             ))}
                         </Box>

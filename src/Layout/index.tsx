@@ -7,8 +7,9 @@ interface LayoutProps {
 }
 const Layout =({children}:LayoutProps) => {
     return (
+        <div style={{position: "absolute", top: 0, left: 0, width: "100vw", height: "100vh", zIndex: -1,}}>
         <Box sx={{
-            backgroundColor: '#10141F',
+            //backgroundColor: '#10141F',
             display: 'flex',
             flexDirection:{
                 xs: 'column',
@@ -23,6 +24,7 @@ const Layout =({children}:LayoutProps) => {
             <Sidebar/>
             <Box sx={{width: '100%', overflowY: 'scroll'}}>{children}</Box>
         </Box>
+        </div>
     );
 }
 export default Layout; 
