@@ -51,10 +51,13 @@ const Sidebar = () => {
                 sm: '100%',
                 lg: 200,
             },
-            height: 400,
+            height: {
+                xs: 100,
+                lg: 510,
+            },
             marginTop:{
                 xs: 0,
-                lg: 10,
+                lg: 0,
             }
         }}>
             <Box sx={{ display: 'flex',
@@ -71,19 +74,50 @@ const Sidebar = () => {
                  
                 }}
                 >
-                    <Paper sx={{ display: { xs: 'none', sm: 'block' },backgroundColor: 'transparent',color: "white"  }}>
+                    <Paper sx={{ display: { xs: 'none', sm: 'block' },backgroundColor: 'rgb(215, 206, 193)',color: "white"  ,alignItems: 'center',leftMargin: 10}}>
                          <Typography
                             variant="h5"
                             component="h1"
                             my={2}
                             fontFamily={"sans-serif"}
                             fontWeight={600}
-                            fontSize={30}
+                            fontSize={25}
+                            color="black"
                         >
                             Spotify Toy
                         </Typography>
-                    </Paper>
                         
+                    </Paper>
+
+                            <Box sx={{position:{
+                                xs: "relative",
+                                lg: "absolute",
+                            }, top: {
+                                xs: 0,
+                                lg: 50,
+                            }, left: {
+                                xs:0,
+                                lg:30,
+                            }, width:{
+                                xs: 200,
+                                lg: 200,
+                            } , height: {
+                                xs: 200,
+                                lg: 300,
+                            }, zIndex: 0}} style={{}}>
+                            <Spline scene="https://prod.spline.design/MOre3FbS7fPsGGpV/scene.splinecode" />
+                            </Box>
+                        <Box sx={{
+                            width: {
+                                xs:0,
+                                lg: 200,
+                            },
+                            height: {
+                                xs: 0,
+                                lg: 90,
+                            },
+                        }}>
+                            </Box>
                         <Box sx={{
                             py:{
                                 xs: "0px",
@@ -95,6 +129,7 @@ const Sidebar = () => {
                                 lg: 'column',
                             },
                             gap: 4,
+                            zIndex: 2,
                         }}>
                             {navLinks.map((item) => (
                                 <Link  
@@ -108,7 +143,7 @@ const Sidebar = () => {
                                     <Paper elevation={4} sx={{
                                         display: 'flex',
                                         alignItems: 'center',
-                                        backgroundColor: 'rgba(11, 59, 46, 0.95)',
+                                        backgroundColor: 'rgb(11, 59, 46)',
                                         gap: 2,
                                         color:"white",
                                         width:{
