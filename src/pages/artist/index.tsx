@@ -56,16 +56,20 @@ const Artist = () => {
                     height:"100%",
                 }}>
                     {artistProfile.map((u) => (
-                        <div key ={u['id']}>
+                        <Box key ={u['id']} sx={{backgroundColor:"rgba(31, 31, 31, 0.8)",borderRadius:7,width:"50%"}}>
                             <h1>{u['name']}</h1>
-                            <img src={u['images'][0]['url']}  width={200} height={200}/>
+                            <Box sx={{display: 'flex', flexDirection: 'row'}}>
+                                
+                                <img src={u['images'][0]['url']}  width={200} height={200}/>
+                                
+                            </Box>
                             <Box>
-                                <h3>Followers: {u['followers']['total']}</h3>
-                                <h3>Genres: {u['genres']} </h3>
-                                <h3>Popularity: {u['popularity']}</h3>
+                                <h2>Followers: {u['followers']['total']}</h2>
+                                <h2>Genres: {u['genres']} </h2>
+                                <h2>Popularity: {u['popularity']}</h2>
 
                             </Box>
-                        </div>
+                        </Box>
                     ))}
                     <Box sx={{
                         width:{

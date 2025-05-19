@@ -5,8 +5,9 @@ import { link } from "fs";
 import React from "react";
 import { useLocation } from "react-router-dom";
 import HomeIcon from "../../assets/icons/icon-nav-home.svg";
-import TopArtistsIcon from "../../assets/icons/icon-nav-tv-series.svg";
-import { Home } from "@mui/icons-material";
+import TopArtistsIcon from "../../assets/icons/icon-topartists.svg";
+import SpotifyLogo from "../../assets/Spotify Custom Logo.png";
+import UserIcon from "../../assets/icons/icon-user.svg";
 import Spline from "@splinetool/react-spline";
 const navLinks = [
     {
@@ -21,14 +22,9 @@ const navLinks = [
     },
     {
         name: "User",
-        icon: TopArtistsIcon,
+        icon: UserIcon,
         link: "/user",
-    },
-    {
-        name: "Test",
-        icon: HomeIcon,
-        link: "/test",
-    },
+    }
 ];
 
 const Sidebar = () => {
@@ -49,7 +45,7 @@ const Sidebar = () => {
             justifyContent: 'space-between',
             width:{
                 sm: '100%',
-                lg: 200,
+                lg: 180,
             },
             height: {
                 xs: 100,
@@ -74,8 +70,12 @@ const Sidebar = () => {
                  
                 }}
                 >
-                    <Paper sx={{ display: { xs: 'none', sm: 'block' },backgroundColor: 'rgb(215, 206, 193)',color: "white"  ,alignItems: 'center',leftMargin: 10}}>
-                         <Typography
+                    <Box sx={{ display: { xs: 'none', sm: 'block' },postiion:{xs: "relative", lg: "absolute"}, left:{xs:90,lg:555}, top:{xs:0, lg:4},color: "white"  ,alignItems: 'center',leftMargin: 0, width:{sx:300, lg:180}, zIndex:2}}>
+                        <Box sx={{height:{xs:0,lg:40}}}>
+                            </Box>
+                        <img src={SpotifyLogo} style={{width:"100%",objectFit: 'cover'}}/>
+                        
+                         {/*<Typography
                             variant="h5"
                             component="h1"
                             my={2}
@@ -85,9 +85,9 @@ const Sidebar = () => {
                             color="black"
                         >
                             Spotify Toy
-                        </Typography>
+                        </Typography>*/}
                         
-                    </Paper>
+                    </Box>
 
                             <Box sx={{position:{
                                 xs: "relative",
@@ -114,7 +114,7 @@ const Sidebar = () => {
                             },
                             height: {
                                 xs: 0,
-                                lg: 90,
+                                lg: 20,
                             },
                         }}>
                             </Box>

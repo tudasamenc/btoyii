@@ -5,6 +5,7 @@ import TopArtists from "./pages/topartists";
 import User from "./pages/user";
 import { createBrowserRouter } from "react-router-dom";
 import Welcome from "./pages/welcome";
+import Album from "./pages/album";
 
 export const router = createBrowserRouter([
     {
@@ -35,6 +36,11 @@ export const router = createBrowserRouter([
     {
         path: "/welcome",
         element: <Welcome />,
+        errorElement: <div>404</div>,
+    },
+    {
+        path: "/album",
+        element: < Album/>,
         errorElement: <div>404</div>,
     }
 ])
